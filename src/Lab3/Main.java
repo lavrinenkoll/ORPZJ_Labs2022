@@ -112,7 +112,7 @@ public class Main {
             }
         }
 
-         System.out.println(String.format("Відсортований рядок, за зростанням вмісту літери '%s': ", symbol));
+         System.out.printf("Відсортований рядок, за зростанням вмісту літери '%s': ", symbol);
 
          for (int i=0;i<count.length;i++){
             System.out.print(words[i]+" ");
