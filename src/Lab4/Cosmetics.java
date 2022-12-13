@@ -6,8 +6,8 @@ import java.util.Comparator;
 import java.lang.String;
 
 public class Cosmetics {
-    private String type, country, brand, name;
-    private int prize;
+    final private String type, country, brand, name;
+    final private int prize;
 
     Cosmetics (String type, String country, String brand, String name, int prize){
         this.type = type;
@@ -33,16 +33,16 @@ public class Cosmetics {
 
     public static void main(String[] args){
         Cosmetics[] cosmetics = new Cosmetics[5];
-        cosmetics[0] = new Cosmetics("Тональное средство", "Япония", "Isehan", "Isehan Kiss Me Ferme Skincare CC Milk", 430);
+        cosmetics[0] = new Cosmetics("Тональний засіб", "Японія", "Isehan", "Isehan Kiss Me Ferme Skincare CC Milk", 430);
         cosmetics[1] = new Cosmetics("Помада", "США", "Estee Lauder", "Estee Lauder Pure Color Envy Sculpting Lipstick", 623);
-        cosmetics[2] = new Cosmetics("Тени для глаз", "США", "Tarte", "Tarte Cosmetics Tartelette in Bloom Clay Palette", 2085);
-        cosmetics[3] = new Cosmetics("Пудра", "Италия", "Pupa", "Pupa Luminys Baked All Over", 424);
-        cosmetics[4] = new Cosmetics("Тушь для ресниц", "Бельгия", "Clinique", "Clinique High Impact Curling Mascara", 401);
+        cosmetics[2] = new Cosmetics("Тіні для очей", "США", "Tarte", "Tarte Cosmetics Tartelette in Bloom Clay Palette", 2085);
+        cosmetics[3] = new Cosmetics("Пудра", "Італія", "Pupa", "Pupa Luminys Baked All Over", 424);
+        cosmetics[4] = new Cosmetics("Туш для вій", "Бельгія", "Clinique", "Clinique High Impact Curling Mascara", 401);
 
         Arrays.sort(cosmetics, new Cosmetics.SortByPrize());
-        System.out.println("Отсортировано по цене:");
+        System.out.println("Відсортовано за ціною:");
         System.out.println("------------------------------------------------------------------------------------------------------------");
-        System.out.printf("%-20s%-12s%-15s%-50s%-7s\n", "Вид косметики", "Страна", "Бренд", "Название", "Цена");
+        System.out.printf("%-20s%-12s%-15s%-50s%-7s\n", "Вид косметики", "Країна", "Бренд", "Назва", "Ціна");
         System.out.println("------------------------------------------------------------------------------------------------------------");
         for (Cosmetics i: cosmetics){
             System.out.printf("%-20s%-12s%-15s%-50s%-5d грн\n", i.type, i.country, i.brand, i.name, i.prize);
@@ -50,9 +50,9 @@ public class Cosmetics {
         System.out.println("------------------------------------------------------------------------------------------------------------");
 
         Arrays.sort(cosmetics, new Cosmetics.SortByCountry());
-        System.out.println("\n"+"Отсортировано по стране в обратном порядке:");
+        System.out.println("\n"+"Відсортовано за країною в обратному порядку:");
         System.out.println("------------------------------------------------------------------------------------------------------------");
-        System.out.printf("%-20s%-12s%-15s%-50s%-7s\n", "Вид косметики", "Страна", "Бренд", "Название", "Цена");
+        System.out.printf("%-20s%-12s%-15s%-50s%-7s\n", "Вид косметики", "Країна", "Бренд", "Назва", "Ціна");
         System.out.println("------------------------------------------------------------------------------------------------------------");
         for (Cosmetics i: cosmetics){
             System.out.printf("%-20s%-12s%-15s%-50s%-5d грн\n", i.type, i.country, i.brand, i.name, i.prize);
